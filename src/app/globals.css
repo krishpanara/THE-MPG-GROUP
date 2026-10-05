@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+/* Palette and type follow brief tabs 2 "Colours" and 3 "Typography". */
+@theme {
+  --color-cream: #fbf7f1; /* background, warm off-white */
+  --color-orange: #d9531e; /* primary: buttons, rules, large headings, accents */
+  --color-orange-safe: #b8431a; /* small orange text and links on off-white */
+  --color-ink: #2d3748; /* charcoal: headings, dark sections */
+  --color-body: #4a5568; /* body copy, captions */
+  --color-muted: #718096; /* secondary labels */
+  --color-rule: #cfc3b3; /* hairlines and borders */
+  --color-tint: #f5e6d8; /* callout and panel backgrounds */
+  --color-deep: #1a202c; /* footer, high-contrast blocks */
+  --color-sand: #e9dfd2; /* decorative circuit band (brochure) */
+  --color-peach: #f2a983; /* small orange-family labels on charcoal (5.9:1) */
+
+  --font-serif: Georgia, var(--font-gelasio), serif;
+  --font-sans: Calibri, var(--font-carlito), sans-serif;
+  /* Big figures (01–05, 100+) use lining numerals, as in the brochure */
+  --font-num: var(--font-tinos), "Times New Roman", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-body);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem; /* 17px mobile */
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 1.125rem; /* 18px desktop */
+  }
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-orange);
+  outline-offset: 2px;
+}
+
+/* Type scale: H1 48/32, H2 32/24, H3 22/20 (brief tab 3) */
+@utility h1 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  color: var(--color-ink);
+  font-size: 2rem;
+  line-height: 1.15;
+  @media (min-width: 768px) {
+    font-size: 3rem;
+  }
+}
+
+@utility h2 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  color: var(--color-ink);
+  font-size: 1.5rem;
+  line-height: 1.25;
+  @media (min-width: 768px) {
+    font-size: 2rem;
+  }
+}
+
+@utility h3 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  color: var(--color-ink);
+  font-size: 1.25rem;
+  line-height: 1.3;
+  @media (min-width: 768px) {
+    font-size: 1.375rem;
+  }
+}
+
+/* Small uppercase orange labels (text-safe orange on light backgrounds) */
+@utility eyebrow {
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-orange-safe);
+}
